@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="display: block;">    
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">       
+
+      <a class="navbar-brand"routerLink="/">Games</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <ul class="navbar-nav " style="width: -webkit-fill-available;"><!-- mr-auto -->
+        <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sections
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">All Sections</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" *ngFor="let section of sections" >{{section.name}}</a>              
+            </div>
+          </li> -->
+          <li style="width: -webkit-fill-available;">
+              <input class="form-control mr-sm-2" #search type="search" placeholder="Search" aria-label="Search">              
+          </li>
+          <li>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="searchProducts($event, search.value)" style="margin-left: 10px;">Search</button>
+          </li>
+    </ul>
+    <ul class="navbar-nav "><!-- mr-auto -->              
+        <li>
+           <!--  --> <span class="material-icons icon-shop"  *ngIf="!isLoggin"  data-toggle="modal" data-target="#exampleModalCenter" >face</span>
+           <!--  --> <span class="material-icons icon-shop"  *ngIf="isLoggin" data-toggle="modal" (click)="logOut($event)" >remove_circle</span>
+           
+        </li>
+        <li>
+            <span class="material-icons icon-shop" *ngIf="isLoggin" routerLink="/cart" >add_shopping_cart</span>
+        </li>
+  </ul>
+    
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">       
+     
+      <ul class="navbar-nav mr-auto" style="display: flex; width: -webkit-fill-available;justify-content: center;">
+          <li  routerLinkActive="active">
+            <a class="nav-link" (click)="loadPage()"  routerLink="/home">Home </a>
+            
+          </li>
+          <!-- <li  routerLinkActive="active">
+            <a class="nav-link" routerLink="/">Videogames</a>
+          </li> -->          
+          <li class="nav-item dropdown" *ngFor="let section of sections">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{section.name}}
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" *ngFor="let platform of section.platform" (click)="searchByCategory($event, section.id, platform.id)">{{platform.name}}</a>                                        
+                  </div>
+          </li>
+        </ul>
+    </div>
+
+ 
+</nav>
+<app-login></app-login>
+
+  

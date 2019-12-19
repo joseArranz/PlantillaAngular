@@ -1,0 +1,11 @@
+<div class="card" style="width: -webkit-fill-available; display: -webkit-box;">
+    <img class="card-img-top" src="{{item.img}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{item.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted"></h6>
+      <p class="card-text">{{item.desc}}</p>
+      <p class="card-text">{{item.platform}}</p>
+      <p class="card-text">Price: {{item.price}}</p>
+      <p><span class="material-icons icon-shop" *ngIf="isLoggin" (click)="addToCart($event, item)" >add_shopping_cart</span></p>
+    </div>
+  </div>

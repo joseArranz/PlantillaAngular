@@ -1,0 +1,39 @@
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">      
+          <div class="carousel-item "  *ngFor="let arrayItems of itemsArray ; let k = index" [ngClass]="k == 0 ? 'item active' : 'item'" >              
+              <a  href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+            
+                <div *ngFor="let item of arrayItems" class="flex-box">
+              <div class="" style="padding-right: 10px">
+                  <app-product   [item]="item" (itemEmit)="itemEmit($event)" ></app-product>              
+              </div>                
+            </div>
+
+            <a href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>            
+          </div>                      
+      </div>
+<div>
+  <!--   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a> -->
+<!--       <a  href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a  href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="sr-only">Next</span>
+        </a> -->
+</div>
+</div>

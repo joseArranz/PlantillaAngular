@@ -1,0 +1,137 @@
+https://angular.io/cli/generate
+
+F:\Proyectos\Programacion\Repo\Bit\PlantillaAngular\src\app\components\common
+F:\Proyectos\Programacion\Repo\Bit\PlantillaAngular\src\app\services
+
+ng config defaults.styleExt=scss
+ng set defaults.styleExt scss
+angular.json
+
+"schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+
+
+ng: 
+
+appShell
+application
+class
+component
+directive
+enum
+guard
+interface
+library
+module
+pipe
+service
+serviceWorker
+universal
+webWorker
+
+Boostrap
+npm install bootstrap --save
+npm install jquery --save
+npm install popper.js --save
+Angular.json
+"styles": [
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
+
+
+
+COMPONENTS
+ng g module components/common
+ng g component components/common/header --entryComponent=true --export=true
+ng g component components/common/footer --entryComponent=true --export=true
+ng g component components/common/home --entryComponent=true --export=true
+ng g component components/common/detail --entryComponent=true --export=true
+ng g component components/common/product --entryComponent=true --export=true
+ng g component components/common/carousel --entryComponent=true --export=true
+ng g component components/common/login --entryComponent=true --export=true
+
+ng g service services/common/myBasicService
+ng g service components/common/home
+ng g service services/common/sections
+
+ng g module components/singUp --routing=true
+ng g component components/singUp --entryComponent=true --export=true
+
+
+ng g module components/cart --routing=true
+ng g component components/cart --entryComponent=true --export=true
+
+
+REACTIVE FORMS
+npm i @angular/forms --save
+
+
+FOOTERS
+https://mdbootstrap.com/docs/angular/navigation/footer/
+------------FOOTER FLEX CONTENIDO (todo en el tamaño de la pagina)
+-index.html
+<html lang="en"  class="h-100">
+<body class="container pt-3 h-100">
+<app-root class="d-flex flex-column h-100"></app-root>
+-app.component.html
+<app-footer class="mt-auto"></app-footer>
+------------FOOTER FLEX NO CONTENIDO (scrool de body, y pie de pagina al final de la pagina)
+-index.html
+<html lang="en"  class="h-100">
+<body class="container pt-3">
+<app-root class="d-flex flex-column h-100"></app-root>
+-app.component.html
+<app-footer></app-footer>
+
+
+ENCAPSULACION APP COMPONENTS
+app.component.scss
+:host {
+    border: 2px solid dimgray;
+    display: block;
+    padding: 20px;
+    background-color: white;   
+}
+
+
+
+ICONS
+https://www.npmjs.com/package/material-icons
+npm install material-icons --save
+styles.scss
+@import '~material-icons/iconfont/material-icons.css';
+en pagina : <span class="material-icons">face</span>
+Botones
+https://materializecss.com/icons.html
+
+
+LOGIN
+npm i ngx-cookie-service --save
+
+NOTIFICATIONS
+npm i ngx-toastr --save
+npm install @angular/animations --save
+https://www.npmjs.com/package/ngx-toastr
+
+
+ELIMINAR HEADER REFERER(Cuando hay params en la url (router.navigate) y se hace una llamada a back concatena los header referer y el servidor peta por el cors )
+index.html
+<meta name="referrer" content="no-referrer" />
+
+
+TODO
+can activate el login no va por el token
+
+
+
+https://bootstrapbay.com/blog/day-14-bootstrap-4-modals-tutorial-and-examples/#bootstrap-4-login-modal
+https://bootsnipp.com/tags/registration
